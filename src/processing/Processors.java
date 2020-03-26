@@ -122,11 +122,11 @@ public class Processors {
                 StringBuilder str = new StringBuilder();
                 str.append("(");
                 if (this.clipLower && this.clipUpper) {
-                    str.append("lower = " + this.lower + "," + "upper = " + this.upper);
+                    str.append("lower = ").append(this.lower).append(",").append("upper = ").append(this.upper);
                 } else if (this.clipLower) {
-                    str.append("lower = " + this.lower);
+                    str.append("lower = ").append(this.lower);
                 } else if (this.clipUpper) {
-                    str.append("upper = " + this.upper);
+                    str.append("upper = ").append(this.upper);
                 }
                 str.append(")");
                 return str.toString();
@@ -180,20 +180,6 @@ public class Processors {
 
 
         }
-
-        // TODO: 1) oeffentliche, abstrakte, statische, innere Klasse "Scaler"
-
-        // TODO: 2) oeffentliche, statische Methode "Processor scale(double min, double max)"
-
-        // TODO: 3) oeffentliche, statische Methode "Processor standardize()"
-
-        // TODO: 4) oeffentliche, statische, innere Klasse "PercentScaler"
-
-        // TODO: 5) private, statische, innere Klasse "Clipper"
-
-        // TODO: 6) oeffentliche, statische Methode "Processor clip(double lower, double upper)"
-        // TODO: 6) oeffentliche, statische Methode "Processor clipLower(double lower)"
-        // TODO: 6) oeffentliche, statische Methode "Processor clipUpper(double upper)"
 
         // static helper class for statistical measures of Data objects
         private static class DataUtil {
