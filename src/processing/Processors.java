@@ -13,7 +13,7 @@ public class Processors {
     }
 
     public static Processor scale(double min, double max) {
-        Scaler scaler = new Scaler() {
+        return new Scaler() {
             @Override
             public double getMin() {
                 return min;
@@ -25,11 +25,11 @@ public class Processors {
             }
 
         };
-        return scaler;
     }
 
     public static Processor standardize() {
-        Processor processor = new Processor() {
+
+        return new Processor() {
 
             @Override
             public Data process(Data data) {
@@ -51,8 +51,6 @@ public class Processors {
                 return "Standardizer";
             }
         };
-
-        return processor;
     }
 
     public static Processor clip(double lower, double upper) {
@@ -68,7 +66,7 @@ public class Processors {
     }
 
 
-    public static class Clipper implements Processor {
+    private static class Clipper implements Processor {
         boolean clipLower;
         boolean clipUpper;
         double lower;
